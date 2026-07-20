@@ -3,64 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Крамниця — демо AIVA-віджета</title>
+<title>Крамниця DEMO AIVA — Каталог</title>
 <style>
-  :root{ --green:#16b34a; --green-d:#0f9a3f; --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --bg:#f7f8fa; --card:#fff; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; font-family:-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; color:var(--ink); background:var(--bg); }
-  a{ color:inherit; text-decoration:none; }
-  .promo{ background:var(--green); color:#fff; text-align:center; padding:10px 16px; font-size:14px; }
-  header{ background:#1b1b1d; color:#fff; }
-  .hd{ max-width:1140px; margin:0 auto; padding:16px; display:flex; align-items:center; gap:20px; }
-  .logo{ display:flex; align-items:center; gap:12px; font-weight:800; font-size:22px; }
-  .logo .mark{ width:44px; height:44px; border-radius:10px; background:var(--green); display:flex; align-items:center; justify-content:center; font-size:24px; }
-  .logo small{ display:block; font-size:11px; letter-spacing:2px; color:#9ca3af; font-weight:600; }
-  .cta{ margin-left:auto; background:#fbbf24; color:#111; font-weight:700; padding:10px 18px; border-radius:10px; }
-  .phone{ margin-left:auto; text-align:right; }
-  .phone b{ font-size:20px; } .phone small{ display:block; color:#9ca3af; font-size:12px; }
-  nav.menu{ background:#fff; border-bottom:1px solid var(--line); }
-  nav.menu .in{ max-width:1140px; margin:0 auto; padding:14px 16px; display:flex; gap:26px; font-weight:600; color:#374151; }
-  main{ max-width:1140px; margin:0 auto; padding:24px 16px; }
-  .crumbs{ color:var(--muted); font-size:13px; margin-bottom:10px; }
-  h1{ font-size:26px; margin:6px 0 18px; }
-  .wrap{ display:grid; grid-template-columns: 1fr 340px; gap:22px; align-items:start; }
-  .grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
-  .product{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; }
-  .thumb{ height:120px; border-radius:10px; background:#eefaf1; display:flex; align-items:center; justify-content:center; font-size:52px; }
-  .cat{ color:#9ca3af; font-size:11px; letter-spacing:1px; margin-top:12px; text-transform:uppercase; }
-  .p-name{ font-size:16px; font-weight:700; margin:4px 0 12px; }
-  .p-row{ display:flex; align-items:center; justify-content:space-between; }
-  .p-price{ font-size:20px; font-weight:800; }
-  .buy{ background:var(--green); color:#fff; border:none; font-weight:700; padding:10px 16px; border-radius:10px; cursor:pointer; }
-  .buy:hover{ background:var(--green-d); }
-  .cart{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; position:sticky; top:16px; }
-  .cart h3{ margin:0 0 14px; display:flex; align-items:center; gap:8px; }
-  .ci{ display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--line); }
-  .ci .ic{ width:38px; height:38px; border-radius:8px; background:#eefaf1; display:flex; align-items:center; justify-content:center; font-size:20px; }
-  .ci .nm{ flex:1; font-size:14px; } .ci .nm small{ display:block; color:var(--muted); }
-  .ci .rm{ border:none; background:transparent; color:#9ca3af; font-size:20px; cursor:pointer; }
-  .cart-empty{ color:var(--muted); font-size:14px; padding:8px 0 4px; }
-  .cart-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
-  .cart-total{ font-size:22px; font-weight:800; }
-  .to-checkout{ display:block; width:100%; text-align:center; margin-top:14px; background:var(--green); color:#fff; border:none; font-weight:700; padding:12px; border-radius:10px; cursor:pointer; }
-  .badge{ background:var(--green); color:#fff; border-radius:999px; padding:2px 9px; font-size:13px; font-weight:700; }
-  section.block{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; margin-top:22px; }
-  section.full{ min-height:78vh; scroll-margin-top:70px; display:flex; flex-direction:column; justify-content:center; }
-  section.full h2{ font-size:30px; }
-  .sec-badge{ display:inline-block; align-self:flex-start; background:#eefaf1; color:var(--green-d); font-weight:700; font-size:12px; letter-spacing:1px; text-transform:uppercase; padding:6px 12px; border-radius:999px; margin-bottom:14px; }
-  #catalog{ scroll-margin-top:70px; }
-  section.block h2{ margin:0 0 10px; }
-  form .frow{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
-  form input, form textarea{ flex:1; min-width:220px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; font:inherit; }
-  form textarea{ width:100%; min-height:70px; }
-  .order-btn{ background:var(--green); color:#fff; border:none; font-weight:700; padding:13px 22px; border-radius:10px; cursor:pointer; font-size:15px; }
-  .order-ok{ margin-top:12px; color:var(--green-d); font-weight:600; display:none; }
-  footer{ text-align:center; color:var(--muted); font-size:13px; padding:30px 16px; }
-  @media(max-width:900px){ .wrap{ grid-template-columns:1fr; } .grid{ grid-template-columns:repeat(2,1fr); } .cart{ position:static; } }
+  :root{--green:#16b34a;--green-d:#0f9a3f;--ink:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#f7f8fa;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  a{color:inherit;text-decoration:none}
+  .promo{background:var(--green);color:#fff;text-align:center;padding:10px 16px;font-size:14px}
+  header{background:#1b1b1d;color:#fff}
+  .hd{max-width:1140px;margin:0 auto;padding:16px;display:flex;align-items:center;gap:20px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px}
+  .logo .mark{width:44px;height:44px;border-radius:10px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:24px}
+  .logo small{display:block;font-size:11px;letter-spacing:2px;color:#9ca3af;font-weight:600}
+  .phone{margin-left:auto;text-align:right}
+  .phone b{font-size:20px}.phone small{display:block;color:#9ca3af;font-size:12px}
+  nav.menu{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  nav.menu .in{max-width:1140px;margin:0 auto;padding:12px 16px;display:flex;gap:8px}
+  nav.menu a{font-weight:600;color:#374151;padding:9px 16px;border-radius:9px}
+  nav.menu a:hover{background:#f3f4f6}
+  nav.menu a.active{background:#eefaf1;color:var(--green-d)}
+  main{max-width:1140px;margin:0 auto;padding:24px 16px}
+  .crumbs{color:var(--muted);font-size:13px;margin-bottom:10px}
+  h1{font-size:28px;margin:6px 0 20px}
+  .wrap{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .product{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .thumb{height:120px;border-radius:10px;background:#eefaf1;display:flex;align-items:center;justify-content:center;font-size:52px}
+  .cat{color:#9ca3af;font-size:11px;letter-spacing:1px;margin-top:12px;text-transform:uppercase}
+  .p-name{font-size:16px;font-weight:700;margin:4px 0 12px}
+  .p-row{display:flex;align-items:center;justify-content:space-between}
+  .p-price{font-size:20px;font-weight:800}
+  .buy{background:var(--green);color:#fff;border:none;font-weight:700;padding:10px 16px;border-radius:10px;cursor:pointer}
+  .buy:hover{background:var(--green-d)}
+  .cart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;position:sticky;top:74px}
+  .cart h3{margin:0 0 14px;display:flex;align-items:center;gap:8px}
+  .ci{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .ci .ic{width:38px;height:38px;border-radius:8px;background:#eefaf1;display:flex;align-items:center;justify-content:center;font-size:20px}
+  .ci .nm{flex:1;font-size:14px}.ci .nm small{display:block;color:var(--muted)}
+  .ci .rm{border:none;background:transparent;color:#9ca3af;font-size:20px;cursor:pointer}
+  .cart-empty{color:var(--muted);font-size:14px;padding:8px 0 4px}
+  .cart-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+  .cart-total{font-size:22px;font-weight:800}
+  .to-checkout{display:block;width:100%;text-align:center;margin-top:14px;background:var(--green);color:#fff;border:none;font-weight:700;padding:12px;border-radius:10px;cursor:pointer}
+  .badge{background:var(--green);color:#fff;border-radius:999px;padding:2px 9px;font-size:13px;font-weight:700}
+  section.block{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:22px}
+  section.block h2{margin:0 0 10px}
+  form .frow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  form input,form textarea{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit}
+  form textarea{width:100%;min-height:70px}
+  .order-btn{background:var(--green);color:#fff;border:none;font-weight:700;padding:13px 22px;border-radius:10px;cursor:pointer;font-size:15px}
+  .order-ok{margin-top:12px;color:var(--green-d);font-weight:600;display:none}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:34px 16px;border-top:1px solid var(--line);margin-top:30px}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.cart{position:static}}
 </style>
 </head>
 <body>
-<div class="promo">🤖 Демо AI-асистента AIVA — натисніть кнопку чату внизу праворуч і попросіть підібрати товар, додати в кошик чи заповнити замовлення.</div>
+<div class="promo">🤖 Демо AI-асистента AIVA — натисніть кнопку чату внизу праворуч. Спробуйте: «підбери товар», «додай чашку», «відведи до доставки».</div>
 
 <header>
   <div class="hd">
@@ -70,17 +68,17 @@
 </header>
 
 <nav class="menu"><div class="in">
-  <a href="#catalog">Каталог</a>
-  <a href="#delivery">Доставка й оплата</a>
-  <a href="#contacts">Контакти</a>
+  <a href="index.html" class="active">Каталог</a>
+  <a href="dostavka.html">Доставка й оплата</a>
+  <a href="kontakty.html">Контакти</a>
 </div></nav>
 
 <main>
   <div class="crumbs">Головна › Каталог › Усі товари</div>
-  <h1 id="catalog">Каталог товарів</h1>
+  <h1>Каталог товарів</h1>
 
   <div class="wrap">
-    <div class="grid" id="grid"><!-- товари рендеряться JS --></div>
+    <div class="grid" id="grid"></div>
 
     <aside class="cart">
       <h3>🧺 Ваш кошик <span class="badge" id="cart-count">0</span></h3>
@@ -110,25 +108,11 @@
       <div class="order-ok" id="order-ok">✅ Дякуємо! Замовлення прийнято, менеджер звʼяжеться з вами.</div>
     </form>
   </section>
-
-  <section class="block full" id="delivery">
-    <span class="sec-badge">Розділ · Доставка</span>
-    <h2>Доставка й оплата</h2>
-    <p>Відправляємо <b>Новою Поштою</b> по всій Україні — 1–3 дні. Доставка по місту — 60 грн, від 1000 грн — безкоштовно.
-    Оплата: онлайн карткою, накладений платіж або переказ на рахунок.</p>
-  </section>
-
-  <section class="block full" id="contacts">
-    <span class="sec-badge">Розділ · Контакти</span>
-    <h2>Контакти</h2>
-    <p>Телефон: <b>0 (800) 000-000</b> (щоденно 9:00–18:00). Email: shop@example.com. Ми у Telegram, Instagram та Viber.</p>
-  </section>
 </main>
 
-<footer>© Крамниця — демонстраційний магазин для тесту AIVA-віджета.</footer>
+<footer>© Крамниця — демонстраційний магазин для тесту AIVA-віджета · <a href="dostavka.html">Доставка</a> · <a href="kontakty.html">Контакти</a></footer>
 
 <script>
-  // ---- Простий магазин: каталог + кошик (щоб дії бота були видимі) ----
   var PRODUCTS = [
     { id:'cup',   cat:'Аксесуари',  name:'Керамічна чашка', price:400, ic:'☕' },
     { id:'note',  cat:'Аксесуари',  name:'Блокнот чорний',  price:420, ic:'📓' },
@@ -137,44 +121,31 @@
     { id:'bag',   cat:'Одяг',       name:'Шопер',           price:300, ic:'🛍️' },
     { id:'stick', cat:'Дрібнички',  name:'Набір стікерів',  price:90,  ic:'✨' }
   ];
-  var cart = {}; // id -> qty
-
+  var cart = {};
   function renderGrid(){
     document.getElementById('grid').innerHTML = PRODUCTS.map(function(p){
-      return '<div class="product">'
-        + '<div class="thumb">' + p.ic + '</div>'
-        + '<div class="cat">' + p.cat + '</div>'
-        + '<div class="p-name">' + p.name + '</div>'
+      return '<div class="product"><div class="thumb">' + p.ic + '</div>'
+        + '<div class="cat">' + p.cat + '</div><div class="p-name">' + p.name + '</div>'
         + '<div class="p-row"><div class="p-price">' + p.price + ' грн</div>'
-        + '<button class="buy" onclick="addToCart(\'' + p.id + '\')">Купити</button></div>'
-        + '</div>';
+        + '<button class="buy" onclick="addToCart(\'' + p.id + '\')">Купити</button></div></div>';
     }).join('');
   }
-  function addToCart(id){ cart[id] = (cart[id]||0) + 1; renderCart(); }
-  function removeFromCart(id){ if(cart[id]){ cart[id]--; if(cart[id]<=0) delete cart[id]; } renderCart(); }
-  function cartTotal(){ var t=0; for(var id in cart){ var p=PRODUCTS.find(function(x){return x.id===id;}); t += p.price*cart[id]; } return t; }
+  function addToCart(id){ cart[id]=(cart[id]||0)+1; renderCart(); }
+  function removeFromCart(id){ if(cart[id]){cart[id]--; if(cart[id]<=0)delete cart[id];} renderCart(); }
+  function cartTotal(){ var t=0; for(var id in cart){var p=PRODUCTS.find(function(x){return x.id===id;}); t+=p.price*cart[id];} return t; }
   function renderCart(){
-    var ids = Object.keys(cart);
-    var box = document.getElementById('cart-items');
-    if(!ids.length){ box.innerHTML = '<div class="cart-empty">Кошик порожній</div>'; }
-    else {
-      box.innerHTML = ids.map(function(id){
-        var p = PRODUCTS.find(function(x){return x.id===id;});
-        return '<div class="ci"><div class="ic">' + p.ic + '</div>'
-          + '<div class="nm">' + p.name + '<small>' + cart[id] + ' × ' + p.price + ' грн</small></div>'
-          + '<button class="rm" title="Прибрати" onclick="removeFromCart(\'' + id + '\')">×</button></div>';
-      }).join('');
-    }
-    var count = ids.reduce(function(s,id){ return s + cart[id]; }, 0);
-    document.getElementById('cart-count').textContent = count;
-    document.getElementById('cart-total').textContent = cartTotal() + ' грн';
+    var ids=Object.keys(cart), box=document.getElementById('cart-items');
+    if(!ids.length){ box.innerHTML='<div class="cart-empty">Кошик порожній</div>'; }
+    else { box.innerHTML=ids.map(function(id){ var p=PRODUCTS.find(function(x){return x.id===id;});
+      return '<div class="ci"><div class="ic">'+p.ic+'</div><div class="nm">'+p.name+'<small>'+cart[id]+' × '+p.price+' грн</small></div>'
+        +'<button class="rm" title="Прибрати" onclick="removeFromCart(\''+id+'\')">×</button></div>'; }).join(''); }
+    document.getElementById('cart-count').textContent = ids.reduce(function(s,id){return s+cart[id];},0);
+    document.getElementById('cart-total').textContent = cartTotal()+' грн';
   }
-  function placeOrder(){ document.getElementById('order-ok').style.display = 'block'; }
-
+  function placeOrder(){ document.getElementById('order-ok').style.display='block'; }
   renderGrid(); renderCart();
 </script>
 
-<!-- ↓↓↓ САМЕ ЦЕЙ РЯДОК підключають користувачі на свій сайт. data-agent = розумний агентний режим. -->
 <script src="https://alinka-db.vercel.app/widget.js" data-company="eva-kylymky-test" data-agent></script>
 </body>
 </html>
